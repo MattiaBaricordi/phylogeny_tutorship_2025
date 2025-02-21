@@ -122,7 +122,6 @@ bash script.sh
 ### Example of a Maximum-Likelihood Tree Output
 At the end of the run, IQ-TREE generates an ML tree that may look like this:
 ```
-NOTE: Tree is UNROOTED although outgroup taxon 'LngfishAu' is drawn at root
 +--------------LngfishAu
 |
 | +--------------LngfishSA
