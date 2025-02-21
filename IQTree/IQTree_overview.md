@@ -1,8 +1,8 @@
 ## Using IQ-TREE for Phylogenetic Analysis
-**IQ-TREE is a software for phylogenomic inference, uses a stochastic algorithm to infer phylogenetic trees by Maximum Likelihood.**
-It produces an unrooted tree by default, simply ordering the taxa as they appear in the alignment.
+**IQ-TREE is a software for phylogenomic inference, uses a stochastic algorithm to infer phylogenetic trees by Maximum Likelihood.** \\
+It produces an unrooted tree by default, simply ordering the taxa as they appear in the alignment.\\
 
--> IQTree Manual available at http://www.iqtree.org/doc/iqtree-doc.pdf
+-> IQTree Manual available at http://www.iqtree.org/doc/iqtree-doc.pdf \\
 -> WebServer available at http://iqtree.cibiv.univie.ac.at/
 ### Example of a Maximum-Likelihood Tree Output
 At the end of the run, IQ-TREE generates an ML tree that may look like this:
