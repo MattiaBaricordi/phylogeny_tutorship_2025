@@ -121,10 +121,9 @@ bash script.sh
 
 ### Example of a Maximum-Likelihood Tree Output
 At the end of the run, IQ-TREE generates an ML tree that may look like this:
-```
+
 ![Untitled design (1)](https://github.com/user-attachments/assets/b78b07e8-ec30-46af-9196-0a2016fda60c)
 
-```
 This tree makes sense as mammals (Human to Opossum) form a clade, while reptiles (Turtle to Crocodile) and birds form a sister clade. IQ-TREE produces an unrooted tree by default, simply ordering the taxa as they appear in the alignment.
 
 ### Running a Basic Maximum-Likelihood Analysis
