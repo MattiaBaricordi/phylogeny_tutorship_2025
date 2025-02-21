@@ -116,3 +116,87 @@ echo "Analysis complete!"
 ```bash
 bash script.sh
 ```
+# Bash Screen Functioning Manual
+
+## Introduction to GNU Screen
+Create, manage, and navigate multiple terminal sessions within a single window.   
+It is especially useful for managing long-running processes, preventing SSH session disconnections, and multitasking efficiently in the command line.   
+A.K.A. The way to run your processes and log out from your PC
+
+## Basic Screen Commands
+### Starting a New Screen Session
+```bash
+screen -S my_session
+```
+
+### Detaching from a Screen Session
+To detach from a screen session without terminating it:
+- Press **`Ctrl + A`**, then **`D`**
+- This will leave the session running in the background.
+
+### Listing Active Screen Sessions
+To view all running screen sessions:
+```bash
+screen -ls
+```
+Example output:
+```
+There are screens on:
+    1234.my_session (Detached)
+    5678.another_session (Detached)
+```
+
+### Reattaching to a Screen Session
+To resume a previously detached session:
+```bash
+screen -r my_session
+```
+Or, if there’s only one session:
+```bash
+screen -r
+```
+If multiple sessions are running, you must specify the session name or ID.
+
+### Killing a Screen Session
+To terminate a screen session:
+1. Reattach to the session: `screen -r my_session`
+2. Exit normally by typing:
+   ```bash
+   exit
+   ```
+3. Alternatively, inside the screen, press **`Ctrl + A`**, then **`K`**, and confirm with `Y`.
+
+### Force Killing a Screen Session
+To forcibly remove a screen session:
+```bash
+screen -X -S my_session quit
+```
+
+## Navigating and Managing Multiple Windows in a Screen Session
+Once inside a screen session, you can create and navigate between multiple windows.
+
+### Creating a New Window
+Inside a screen session, press:
+- **`Ctrl + A`**, then **`C`** → Creates a new window.
+
+### Switching Between Windows
+- **`Ctrl + A`**, then **`N`** → Switch to the next window.
+- **`Ctrl + A`**, then **`P`** → Switch to the previous window.
+- **`Ctrl + A`**, then **`0-9`** → Jump to a specific window by its number.
+
+### Scrolling Inside Screen
+To scroll inside a screen session:
+- **`Ctrl + A`**, then **`Esc`** → Enter copy mode.
+- Use **Arrow Keys** or **Page Up/Page Down** to scroll. !!No mouse wheel!!
+- Press **`Q`** to exit copy mode.
+
+## Exiting and Cleaning Up
+### Exiting a Screen Session
+To exit and terminate a screen session:
+```bash
+exit
+```
+Or, use **`Ctrl + D`**.
+
+
+
