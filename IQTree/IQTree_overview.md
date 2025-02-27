@@ -111,5 +111,5 @@ iqtree -s example.phy -m TIM2+I+G -B 1000
 The section MAXIMUM LIKELIHOOD TREE in example.phy.iqtree shows a textual representation of the maximum likelihood tree with branch support values in percentage.    
 The NEWICK format of the tree is printed to the file example.phy.treefile. 
 You are going to want to look at:    
-• example.phy.contree: the consensus tree with assigned branch supports where branch lengths are optimized on the original alignment.   
+• **example.phy.contree**: the consensus tree with assigned branch supports where branch lengths are optimized on the original alignment. And open it with programs like FigTree, iTOL (web), phylo.io (web) *enabling the bootstrap values on the nodes/Node labels*
     
