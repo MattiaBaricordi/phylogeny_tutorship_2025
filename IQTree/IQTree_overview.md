@@ -59,11 +59,11 @@ iqtree -s example.phy --prefix myprefix
 iqtree -s example.phy -m MFP
 # change -m MFP to -m TEST to resemble jModelTest/ProtTest
 ```
-the flag -m is the option to specify the model name to use during the analysis.   
+the flag `-m` is the option to specify the model name to use during the analysis.   
 The special MFP key word stands for ModelFinder Plus, which tells IQ-TREE to perform ModelFinder and the remaining analysis using the selected model.    
 ModelFinder computes the loglikelihoods of an initial parsimony tree for many different models and the **Akaike information criterion (AIC)**, **corrected Akaike information criterion (AICc)**, and the **Bayesian information criterion (BIC)**.   
 Then ModelFinder chooses the model that minimizes the **BIC score** (you can also change to AIC or AICc by adding the option -AIC or -AICc, respectively).    
-*TIP: Starting with version 1.5.4, -m MFP is the default behavior. Thus, this run is equivalent to iqtree -s example.phy.*
+*TIP: Starting with version 1.5.4, `-m MFP` is the default behavior. Thus, this run is equivalent to iqtree `-s example.phy`.*
 Once ModelFinder runs, IQ-TREE will write an additional file:  
 • example.phy.model: log-likelihoods for all models tested. It serves as a checkpoint file to recover an interrupted model selection.   
 
@@ -79,13 +79,13 @@ iqtree -s example.phy -m <model>
 iqtree -s example.phy -m TIM2+I+G
 ```
 
-For a more computationally thorough analysis the flag -mtree makes a full tree search for each model considered
+For a more computationally thorough analysis the flag `-mtree` makes a full tree search for each model considered
 ```bash
 iqtree -s example.phy -m MF -mtree
 ```
 
 ### Using codon models
-IQ-TREE supports a number of codon models. You need to input a protein-coding DNA alignment and specify codon data by option -st CODON (Otherwise, IQ-TREE applies DNA model because it detects that your alignment has DNA sequences):
+IQ-TREE supports a number of codon models. You need to input a protein-coding DNA alignment and specify codon data by option `-st CODON` (Otherwise, IQ-TREE applies DNA model because it detects that your alignment has DNA sequences):
 ```bash
 iqtree -s coding_gene.phy -st CODON
 ```
