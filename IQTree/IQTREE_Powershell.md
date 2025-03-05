@@ -35,6 +35,18 @@ Resolve-Path .\MyFile.txt
 Resolve-Path .\MyFolder
 
 ```
+Create a file or a folder:
+```powershell
+New-Item -ItemType File -Path "example.txt"
+# or for a FASTA file
+New-Item -ItemType File -Path "example.fasta"
+# or use the editor
+notepad example.txt
+# to create a folder use the classic bash command make-directory
+mkdir NewFolder
+#alternatively the native
+New-Item -ItemType Directory -Path "NewFolder"
+```
 Tips for Beginners:
 
 Use `Tab` for auto-completion of `cmdlet` names and paths.
