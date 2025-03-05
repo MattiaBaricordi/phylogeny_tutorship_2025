@@ -1,30 +1,7 @@
-# IQ-TREE Installation and PowerShell Basics Tutorial
-
-This document provides a step-by-step guide on installing and running IQ-TREE using Conda on Windows with PowerShell, along with a brief introduction to some basic PowerShell concepts. It is designed for users who are new to PowerShell and phylogenetic analysis using IQ-TREE.
-
----
-
-## Table of Contents
-
-1. [PowerShell Basics](#powershell-basics)
-2. [Installing IQ-TREE Using Conda on Windows (PowerShell)](#installing-iq-tree-using-conda-on-windows-powershell)
-   - [Understanding Conda Environments](#understanding-conda-environments)
-   - [Using IQ-TREE for Phylogenetic Analysis](#using-iq-tree-for-phylogenetic-analysis)
-   - [Running a Basic Maximum-Likelihood Analysis](#running-a-basic-maximum-likelihood-analysis)
-   - [Resuming Interrupted Runs](#resuming-interrupted-runs)
-   - [Specifying an Output Prefix](#specifying-an-output-prefix)
-   - [Choosing the Right Substitution Model](#choosing-the-right-substitution-model)
-   - [Using Codon Models](#using-codon-models)
-   - [Bootstrap Trees](#bootstrap-trees)
-   - [Partitioned Analysis for Multi-Gene Alignments](#partitioned-analysis-for-multi-gene-alignments)
-   - [Conda Installation and IQ-TREE Setup](#conda-installation-and-iq-tree-setup)
-
----
-
 ## PowerShell Basics
 
 **What is PowerShell?**  
-PowerShell is a powerful command-line shell and scripting language built on the .NET framework. It is used for task automation and configuration management and is especially popular for system administration on Windows.
+PowerShell is a command-line shell and scripting language built on the .NET framework. It is used for task automation and configuration management and is especially popular for system administration on Windows.
 
 **Key Features:**
 - **Command-Line Interface (CLI):** Run commands interactively.
@@ -60,16 +37,15 @@ Use `Tab` for auto-completion of `cmdlet` names and paths.
 Remember that PowerShell is case-insensitive.
 Learn about pipelines to combine cmdlets effectively, e.g., `Get-Process | Where-Object {$_.CPU -gt 100}`.
 
-## Installing IQ-TREE Using Conda on Windows (PowerShell)
-# Conda and IQ-TREE Installation on Windows (PowerShell)
+## Conda and IQ-TREE Installation on Windows (PowerShell)
+### Understanding Conda Environments
+Conda environments are isolated spaces that let you install specific software and dependencies without affecting the system’s default packages. They help you work on multiple projects with different requirements seamlessly.
 
-This guide provides a step-by-step process for installing Conda and IQ-TREE using PowerShell on Windows. It also includes verification steps to ensure everything is set up correctly.
-
+Before you proceed, ensure that Conda is configured to work with PowerShell. If not, initialize it by running:
+`conda init powershell` Then, restart PowerShell to apply the changes.
 ---
 
-## CONDA in PowerShell
-
-## Installing Miniconda
+### Installing Miniconda
 
 Miniconda is a minimal installer for Conda, useful if you don’t need the full Anaconda package.
 
@@ -106,9 +82,9 @@ conda info
 6. Creating a Conda Environment for IQ-TREE
 Create a new environment:
 ```powershell
-conda create -n iqtree_env python=3.11
+conda create -n iqtree_env
 ```
-Replace 3.11 with the version of Python you prefer.   
+You can add `python=3.11` or replace 3.11 with the version of Python you prefer.   
 
 7. Activate the environment:
 ```powershell
@@ -120,14 +96,14 @@ conda env list
 ```
 You should see an asterisk (*) next to iqtree_env, this indicates you are in the iqtree environment.
 
-9. Installing IQ-TREE
+9. **Installing IQ-TREE**
 Install IQ-TREE via Bioconda:
 First, add the Bioconda and Conda-Forge channels:
 ```powershell
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
-
+# now install with
 conda install iqtree
 ```
 Confirm the installation when prompted (y).
@@ -140,16 +116,12 @@ iqtree -version
 ```
 You should see a version number and license information.
 
-Run a test command:
+Run a test command calling the manual (`--help`):
 ```powershell
 iqtree -h
 ```
 This should display the help information for IQ-TREE.
-### Understanding Conda Environments
-Conda environments are isolated spaces that let you install specific software and dependencies without affecting the system’s default packages. They help you work on multiple projects with different requirements seamlessly.
 
-Before you proceed, ensure that Conda is configured to work with PowerShell. If not, initialize it by running:
-`conda init powershell` Then, restart PowerShell to apply the changes.
 
 ## Using IQ-TREE for Phylogenetic Analysis
 IQ-TREE is a software tool used for phylogenomic inference. It applies a stochastic algorithm to infer phylogenetic trees by Maximum Likelihood. By default, IQ-TREE produces an unrooted tree that lists taxa in the order they appear in the alignment.
