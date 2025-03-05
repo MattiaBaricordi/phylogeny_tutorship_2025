@@ -1,4 +1,4 @@
-#Phylogeny Survival 101 using the bash commandline
+# Phylogeny Survival 101 using the bash commandline
 Managing Sequences, Alignments, and IQ-TREE in Bash
 
 ## Introduction to the Command Line
