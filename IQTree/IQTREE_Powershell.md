@@ -51,98 +51,35 @@ Tips for Beginners:
 
 Use `Tab` for auto-completion of `cmdlet` names and paths.
 Remember that PowerShell is case-insensitive.
-Learn about pipelines to combine cmdlets effectively, e.g., `Get-Process | Where-Object {$_.CPU -gt 100}`.
-
-## Conda and IQ-TREE Installation on Windows (PowerShell)
-### Understanding Conda Environments
-Conda environments are isolated spaces that let you install specific software and dependencies without affecting the system’s default packages. They help you work on multiple projects with different requirements seamlessly.
-
-Before you proceed, ensure that Conda is configured to work with PowerShell. If not, initialize it by running:
-`conda init powershell` Then, restart PowerShell to apply the changes.
----
-
-### Installing Miniconda
-
-Miniconda is a minimal installer for Conda, useful if you don’t need the full Anaconda package.
-
-1. **Download Miniconda:**
-
-   Go to the [Miniconda download page](https://docs.conda.io/en/latest/miniconda.html) and download the Windows installer for Python 3.x (64-bit).
-
-2. **Install Miniconda:**
-
-   Run the downloaded installer:
-   - Choose "Add Miniconda to my PATH environment variable" (optional but recommended).
-   - Select “Register Miniconda as my default Python 3.9” (recommended).
-
-3. **Open PowerShell:**
-
-   Press `Win + X` > **Windows PowerShell**.
-
-4. **Verify the Installation:**
-
-   ```powershell
-   conda --version
-   ```
-5. Setting Up Conda for PowerShell
-Run the following command to configure Conda for PowerShell:
-```powershell
-conda init powershell
-```
-Restart PowerShell to apply changes.
-
-Check if Conda is working properly:
-```powershell
-conda info
-```
-6. Creating a Conda Environment for IQ-TREE
-Create a new environment:
-```powershell
-conda create -n iqtree_env
-```
-You can add `python=3.11` or replace 3.11 with the version of Python you prefer.   
-
-7. Activate the environment:
-```powershell
-conda activate iqtree_env
-```
-8. Verify the environment:
-```powershell
-conda env list
-```
-You should see an asterisk (*) next to iqtree_env, this indicates you are in the iqtree environment.
-
-9. **Installing IQ-TREE**
-Install IQ-TREE via Bioconda:
-First, add the Bioconda and Conda-Forge channels:
-```powershell
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-# now install with
-conda install iqtree
-```
-Confirm the installation when prompted (y).
-
-Verifying the Installation
-Check IQ-TREE version:
-
-```powershell
-iqtree -version
-```
-You should see a version number and license information.
-
-Run a test command calling the manual (`--help`):
-```powershell
-iqtree -h
-```
-This should display the help information for IQ-TREE.
 
 
 ## Using IQ-TREE for Phylogenetic Analysis
 IQ-TREE is a software tool used for phylogenomic inference. It applies a stochastic algorithm to infer phylogenetic trees by Maximum Likelihood. By default, IQ-TREE produces an unrooted tree that lists taxa in the order they appear in the alignment.
 -> IQTree Manual available at http://www.iqtree.org/doc/iqtree-doc.pdf  
 -> WebServer available at http://iqtree.cibiv.univie.ac.at/  
+
+## **Installing IQ-TREE**
+Install IQ-TREE from http://www.iqtree.org/
+- Manual: http://www.iqtree.org/doc/Quickstart#for-windows-users
+Extract the zipped folder in your Desktop: Since IQ-TREE is a command-line program, clicking on iqtree.exe will not work. You have to open a Command Prompt for all analyses:
+
+Click on “Start” menu (below left corner of Windows screen).
+Type in “cmd” and press “Enter”. It will open the Command Prompt window (see Figure below).
+Go into IQ-TREE folder you just extracted by entering:
+```
+ # change-directory (cd) from here .\ to the folder Desktop\
+cd .\Desktop\
+# list all items in the Desktop folder
+Get-ChildItem 
+# enter the downloaded folder
+cd .\iqtree-2.4.0-Windows\ 
+#get to the executable
+ cd .\bin\
+#run the executable on an example file in .phylip format from the folder you are in, calling the example file from the previous folder
+.\iqtree2.exe -s ../example.phy 
+```
+
+
 ### Example of a Maximum-Likelihood Tree Output
 At the end of the run, IQ-TREE generates an ML tree that may look like this:  
 
