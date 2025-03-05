@@ -24,12 +24,16 @@ Set-ExecutionPolicy: Sets the user’s ability to run scripts.
 Set-ExecutionPolicy RemoteSigned
 ```
 Get-ChildItem: Lists the files and folders in the current directory (similar to ls or dir)
-```
+```powershell
 Get-ChildItem
 ```
 change directory (Set-Location): Changes the current directory
 ```powershell
 cd C:\Path\To\Directory
+#you can retrieve the full path of a file or folder with:
+Resolve-Path .\MyFile.txt
+Resolve-Path .\MyFolder
+
 ```
 Tips for Beginners:
 
