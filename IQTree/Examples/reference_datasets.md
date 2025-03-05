@@ -61,30 +61,7 @@
 
 
 
-### Insecta
 
-| Species                                   | Order             | Accession Number                                                                                  | Mitochondrial Genome Length (bp) |
-|-------------------------------------------|-------------------|--------------------------------------------------------------------------------------------------|----------------------------------|
-| *Erthesina fullo*                         | Hemiptera         | [NC_040808.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_040808.1)                                  | 15,338                           |
-| *Ugyops sp.*                              | Hemiptera         | [NC_035437.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_035437.1)                                  | 15,259                           |
-| *Nicrophorus nepalensis*                  | Coleoptera        | [NC_046579.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_046579.1)                                  | 17,299                           |
-| *Notobitus meleagris*                     | Hemiptera         | [NC_056789.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_056789.1)                                  | 16,543                           |
-| *Mictis harringtonae*                     | Hemiptera         | [NC_056790.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_056790.1)                                  | 16,612                           |
-| *Hippotiscus bipunctatus*                 | Hemiptera         | [NC_056791.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_056791.1)                                  | 16,587                           |
-| *Apis mellifera*                          | Hymenoptera       | [NC_001566.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001566.1)                                  | 16,343                           |
-| *Nasonia vitripennis*                     | Hymenoptera       | [NC_001893.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001893.1)                                  | 16,256                           |
-| *Anopheles gambiae*                       | Diptera           | [NC_002084.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_002084.1)                                  | 15,987                           |
-| *Drosophila melanogaster*                 | Diptera           | [NC_001709.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001709.1)                                  | 19,517                           |
-| *Acyrthosiphon pisum*                     | Hemiptera         | [NC_011594.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_011594.1)                                  | 14,906                           |
-| *Rhodnius prolixus*                       | Hemiptera         | [NC_005439.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_005439.1)                                  | 16,089                           |
-| *Grylloblatta bifratrilecta*              | Grylloblattodea   | [NC_003132.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_003132.1)                                  | 15,677                           |
-| *Allacma fusca*                           | Collembola        | [NC_040808.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_040808.1)                                  | 14,940                           |
-| *Bourletiella arvalis*                    | Collembola        | [NC_039558.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_039558.1)                                  | 14,994                           |
-| *Dicyrtomina saundersi*                   | Collembola        | [NC_044134.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_044134.1)                                  | 15,111                           |
-| *Cubaris murina*                          | Isopoda           | [NC_056789.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_056789.1)                                  | 14,484                           |
-| *Incisitermes minor*                      | Isoptera          | [MG557850.1](https://www.ncbi.nlm.nih.gov/nuccore/MG557850.1)                                    | 15,970                           |
-| *Mantis religiosa*                        | Mantodea          | [NC_037083.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_037083.1)                                  | 15,521                           |
-| *Phobaeticus serratipes*                  | Phasmatodea       | [NC_027595.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_027595.1)                                  | 17,256                           |
 
 
 
