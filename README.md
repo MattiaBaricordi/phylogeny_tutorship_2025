@@ -6,12 +6,8 @@ IQ-TREE from http://www.iqtree.org/
 
 [Aliview](https://github.com/AliView)
 
-[PhyUtility](https://code.google.com/p/phyutility/downloads/list)
-
-[PartitionFinder](http://www.robertlanfear.com/partitionfinder/)
+[FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
 
 [BEAST](tree.bio.ed.ac.uk/software/beast/)
 
-[Tracer](http://tree.bio.ed.ac.uk/software/tracer/)
 
-[FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
