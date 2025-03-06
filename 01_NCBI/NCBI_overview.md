@@ -15,16 +15,11 @@ For more details, visit [NCBI Genomes & Maps](https://www.ncbi.nlm.nih.gov/guide
 ---
 
 ## **Taxonomy**
-The NCBI Taxonomy page provides resources for exploring the taxonomy of over 160,000 organisms:
+The NCBI Taxonomy page provides resources and tools related to the taxonomy of over 160,000 organisms with molecular data in the NCBI databases.
 - **[Taxonomy](#):** Contains names and phylogenetic lineages.
 - **[Downloads](#):** Full taxonomy database and related files.
 - **[Submissions](#):** Tools for submitting nucleotide sequences.
 - **[Tools](#):** Genetic codes and a Taxonomy Browser.
-
----
-# National Library of Medicine - NCBI Taxonomy
-
-The NCBI Taxonomy page provides resources and tools related to the taxonomy of over 160,000 organisms with molecular data in the NCBI databases.
 
 ---
 
@@ -48,6 +43,8 @@ The NCBI DNA & RNA page offers resources for exploring nucleotide sequences:
 - **Submissions:** Portals for submitting genetic information.
 
 For more details, visit [NCBI DNA & RNA](https://www.ncbi.nlm.nih.gov/guide/dna-rna/).
+---
+
 ## **Organelle**
 The NCBI Organelle page offers resources for accessing organelle genome data, including:
 - **Types:** Mitochondria, chloroplasts, and plasmids.
