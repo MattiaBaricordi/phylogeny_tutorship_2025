@@ -2,7 +2,7 @@
 
 ## executables:
 
-IQ-TREE from http://www.iqtree.org/
+[IQ-TREE](http://www.iqtree.org/)
 
 [Aliview](https://github.com/AliView)
 
