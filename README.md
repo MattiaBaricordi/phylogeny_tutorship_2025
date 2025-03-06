@@ -1,4 +1,4 @@
-# phylogeny tutorship 2025
+# Molecular phylogeny and evolution tutorship 2025
 
 ## executables:
 
