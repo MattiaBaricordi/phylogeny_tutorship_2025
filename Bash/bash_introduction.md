@@ -198,5 +198,5 @@ exit
 ```
 Or, use **`Ctrl + D`**.
 
-
+For more resources: https://github.com/filonico/UNIX_and_bash_basics/tree/main
 
