@@ -60,4 +60,8 @@ Contains classification information for organisms.
 - Download using **"Send to" > "File" > "FASTA" > "Create File"**.
 
 ---
+### Downloading Selected Genes from a Reference Genome Page
 
+- Find and open the reference genome page.
+- Navigate to the **"Gene"** section and select the desired genes.
+- Use the "Send to" option > Choose "File" > Select "Gene features" or "Coding sequences" > Choose format (FASTA or GenBank).
