@@ -2,6 +2,8 @@
 
 ## executables:
 
+IQ-TREE from http://www.iqtree.org/
+
 [Aliview](https://github.com/AliView)
 
 [PhyUtility](https://code.google.com/p/phyutility/downloads/list)
