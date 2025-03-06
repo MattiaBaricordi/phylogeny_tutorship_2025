@@ -17,7 +17,7 @@ Use the search bar at the top and the dropdown menu for different databases.
 - **NOT**: Excludes keywords from results.
   - Example: `"Hymenoptera AND mitochondrial NOT Nasonia"`.
 - **" " (Exact Phrase)**: Finds exact matches for phrases.
-  - Example: `"mitochondrial genome"`.
+  - Example: `"Meles meles mitochondrial genome"`.
 - **Wildcard (*)**: Replaces parts of a word or phrase.
   - Example: `"mito*"` finds "mitochondria", "mitochondrial", etc.
 
