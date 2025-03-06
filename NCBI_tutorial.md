@@ -1,14 +1,12 @@
 # Beginner's Guide to Using NCBI for Genes and Genomes
 
-## Introduction
-
-1. Accessing NCBI
+## Accessing NCBI
 
 Go to the NCBI website: https://www.ncbi.nlm.nih.gov/
 
 Use the search bar at the top and the dropdown menu for different databases.
 
-2. Searching for Mitochondrial Data
+## Searching for Mitochondrial Data
 
 Keywords: "mito", "mitochondrial", "mitochondrion"
 
@@ -44,9 +42,7 @@ Try variations:
 
 Compare results to understand the specificity of each keyword.
 
-3. Using the Organelles Database
-
-What is It?
+## Using the Organelles Database
 
 Contains genome sequences of organelles like mitochondria.
 
@@ -58,7 +54,7 @@ Enter a search like "mitochondrial AND mouse".
 
 Click on relevant results to access sequences.
 
-4. Using the Taxonomy Database
+## Using the Taxonomy Database
 
 What is It? 
 Contains classification information for organisms.
@@ -70,7 +66,7 @@ Use keywords: "mito AND Genus species" or "mitochondrial OR mitochondrion Genus 
 
 Review lineage and related information.
 
-5. Retrieving Genetic Sequences
+## Retrieving Genetic Sequences
 
 Step-by-Step
 
@@ -80,7 +76,7 @@ Use "FASTA" or "GenBank" links to view sequences.
 
 Download using "Send to" > "File" > "FASTA" > "Create File".
 
-6. Tips for Effective Searching
+## Tips for Effective Searching
 
 Use quotes for exact matches: "mitochondrial genome".
 
