@@ -8,6 +8,7 @@
 
 [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)
 
-[BEAST](tree.bio.ed.ac.uk/software/beast/)
+[BEAST](https://beast.community/install_on_windows)
+[BEAST2](https://www.beast2.org/download-windows/)
 
 
