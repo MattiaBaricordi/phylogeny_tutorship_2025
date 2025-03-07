@@ -5,7 +5,9 @@
 # [IQ-TREE](http://www.iqtree.org/)
 Will be the main phylogenetic tool you will use
 # [Aliview](https://github.com/AliView)
-A tool to visualize and build datasets and alignments
+A tool to visualize and build datasets and alignments:
+![image](https://github.com/user-attachments/assets/4322b709-e214-40ed-8a2e-595d4de2db0c)
+
 # [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)   
 A tool to visualize the trees you build (local)
 Examples of FigTree:
