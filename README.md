@@ -20,7 +20,8 @@ Examples of FigTree:
 
 # [Phyutility v. 2](https://code.google.com/archive/p/phyutility/downloads)
 To concatenate sequences and build Alignments
-#[MrBayes v. 3.2 ](https://nbisweden.github.io/MrBayes/download.html)
+
+# [MrBayes v. 3.2 ](https://nbisweden.github.io/MrBayes/download.html)
 
 # [BEAST](https://beast.community/install_on_windows)
 Bayesian Inference and TimeTrees
