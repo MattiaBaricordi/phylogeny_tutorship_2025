@@ -2,16 +2,19 @@
 
 ## executables:
 
-[IQ-TREE](http://www.iqtree.org/)
-
-[Aliview](https://github.com/AliView)
-
-[FigTree](http://tree.bio.ed.ac.uk/software/figtree/)   
+# [IQ-TREE](http://www.iqtree.org/)
+Will be the main phylogenetic tool you will use
+# [Aliview](https://github.com/AliView)
+A tool to visualize and build datasets and alignments
+# [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)   
+A tool to visualize the trees you build (local)
 Examples of FigTree:
 ![image](https://github.com/user-attachments/assets/dd385082-a50d-4169-af53-c005468e04f9)
+![image](https://github.com/user-attachments/assets/42e8445e-a6c0-47f1-96bb-28cf8dbc6206)
 
+(Online alternatives:[Phylo.io](https://beta.phylo.io/viewer/))
 
-[BEAST](https://beast.community/install_on_windows)
-[BEAST2](https://www.beast2.org/download-windows/)
+# [BEAST](https://beast.community/install_on_windows)
+# [BEAST2](https://www.beast2.org/download-windows/)
 
 
