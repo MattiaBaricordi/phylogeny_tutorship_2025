@@ -12,7 +12,6 @@ A tool to visualize and build datasets and alignments:
 A tool to visualize the trees you build (local)
 Examples of FigTree:
 ![image](https://github.com/user-attachments/assets/dd385082-a50d-4169-af53-c005468e04f9)
-![image](https://github.com/user-attachments/assets/42e8445e-a6c0-47f1-96bb-28cf8dbc6206)
 
 (Online alternatives:[Phylo.io](https://beta.phylo.io/viewer/))
 
