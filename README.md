@@ -3,7 +3,7 @@
 ## executables:
 
 # [IQ-TREE](http://www.iqtree.org/)
-Both online and local phylogenetic tool      
+Both online and local phylogenetic tool to reconstruct Maximum Likelihood trees    
 ![image](https://github.com/user-attachments/assets/5bc6b5f7-1414-469f-8646-1b92af8fd7ae)
 
 # [Aliview](https://github.com/AliView)
@@ -17,7 +17,17 @@ Examples of FigTree:
 
 (Online alternatives:[Phylo.io](https://beta.phylo.io/viewer/))
 
+
+# [Phyutility v. 2](https://code.google.com/archive/p/phyutility/downloads)
+To concatenate sequences and build Alignments
+#[MrBayes v. 3.2 ](https://nbisweden.github.io/MrBayes/download.html)
+
 # [BEAST](https://beast.community/install_on_windows)
-# [BEAST2](https://www.beast2.org/download-windows/)
+Bayesian Inference and TimeTrees
+
+# R Scripts 
+- **ape**: https://emmanuelparadis.github.io/
+- **phytools**: http://www.phytools.org/
+- **geiger**: https://cran.r-project.org/web/packages/geiger/index.html
 
 
