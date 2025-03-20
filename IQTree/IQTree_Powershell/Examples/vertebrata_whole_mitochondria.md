@@ -23,8 +23,6 @@
 
 - [Falco peregrinus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/8954/)	[NC_000878.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_000878.1/)
 - [Dinornis giganteus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/147464/)	[NC_002672.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_002672.1/)
-
-- [Platypus contaminatus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/2066526/)	[NC_045889.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_045889.1/)
 - [Sarcophilus harrisii](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9305/)	[NC_018788.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_018788.1/)
 - [Ursus arctos](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9644/)	[NC_003427.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_003427.1/)
 - [Vulpes vulpes](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9627/)	[NC_008434.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_008434.1/)
@@ -50,7 +48,6 @@
 | [Crocodylus porosus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/8502/) | [NC_008143.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_008143.1/) | 16,827 |
 | [Falco peregrinus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/8954/) | [NC_000878.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_000878.1/) | 18,098 |
 | [Dinornis giganteus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/147464/) | [NC_002672.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_002672.1/) | 16,647 |
-| [Platypus contaminatus](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/2066526/) | [NC_045889.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_045889.1/) | 16,596 |
 | [Sarcophilus harrisii](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9305/) | [NC_018788.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_018788.1/) | 16,813 |
 | [Ursus arctos](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9644/) | [NC_003427.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_003427.1/) | 16,740 |
 | [Vulpes vulpes](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9627/) | [NC_008434.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_008434.1/) | 16,727 |
