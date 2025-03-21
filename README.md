@@ -9,6 +9,7 @@ Both online and local phylogenetic tool to reconstruct Maximum Likelihood trees
 # [Aliview](https://github.com/AliView)
 A tool to **visualize** and build datasets and alignments:
 ![image](https://github.com/user-attachments/assets/4322b709-e214-40ed-8a2e-595d4de2db0c)
+You could need to update [Java](https://www.java.com/en/download/)
 
 # [FigTree](http://tree.bio.ed.ac.uk/software/figtree/)   
 A tool to visualize and edit the **trees** you build (local)
