@@ -1,0 +1,17 @@
+#NEXUS
+
+Begin sets;
+	charset p1_ATP6_aligned = 1-702;
+	charset p2_ATP8_aligned = 703-924;
+	charset p3_COX1_aligned = 925-2541;
+	charset p4_COX2_aligned = 2542-3243;
+	charset p5_COX3_aligned = 3244-4083;
+	charset p6_CYTB_aligned = 4084-5239;
+	charset p7_ND1_aligned = 5240-6226;
+	charset p8_ND2_aligned = 6227-7297;
+	charset p9_ND3_aligned = 7298-7654;
+	charset p10_ND4_aligned = 7655-9055;
+	charset p11_ND4L_aligned = 9056-9361;
+	charset p12_ND5_aligned = 9362-11338;
+	charset p13_ND6_aligned = 11339-11950;
+End;
