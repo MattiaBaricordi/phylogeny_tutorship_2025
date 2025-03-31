@@ -1,0 +1,8 @@
+starting log: 31/03/25 10:11
+concat
+in filename: .\psaA.fas
+in filename: .\psaB.fas
+in filename: .\rpoB.fas
+in filename: .\rpoC1.fas
+in filename: .\ycf2.fas
+outfile: concatenated_output.nex

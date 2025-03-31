@@ -1,0 +1,12 @@
+starting log: 31/03/25 09:47
+concat
+in filename: .\COX1_aligned.nex
+in filename: .\CYTB_aligned.nex
+in filename: .\ND4_aligned.nex
+outfile: concatenated_output.nex
+starting log: 31/03/25 09:49
+concat
+in filename: .\COX1_aligned.fasta
+in filename: .\CYTB_aligned.fasta
+in filename: .\ND4_aligned.fasta
+outfile: concatenated_output.nex
