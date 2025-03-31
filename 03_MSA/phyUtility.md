@@ -180,17 +180,6 @@ java -jar phyutility.jar -concat -in input1.fa input2.fa -out output.nex -log lo
 
 This will produce a detailed log file (`logfile.txt`) helpful in troubleshooting issues.
 
----
-
-## References and Documentation
-
-- [Phyutility Official Documentation](https://code.google.com/archive/p/phyutility/wikis/UserManual.wiki)
-- Smith, S. A. (2007). *Phyutility manual (v. 2.2)*.
-
-For further questions, issues, or bugs, report them via the [official issue tracker](http://code.google.com/p/phyutility/issues/list).
-
----
-
 
 ## Termites_Examples
 ```termites_16S_aligned.fa
@@ -233,3 +222,10 @@ TTTGTTGTGGTCTTTTTGTTGTTGATTTTGTTTGTCATGGTTGGCGTGGCCTTTCTTACTCTTTTGGAACGTAGGGTTTT
 >Coptotermes_formosanus
 TCTATTGTTGTGTTTTTGTTGTTGGTTATTTTTGTTTTAGTTGGGGTGGCATTTCTTACTCTTTTAGAACGTAGGGTTTTAGGTTATATTCATATTCGTAAGGGCCCCAATAAGGTTGGGTTTGTTGGTATTCTTCAGCCTTTTAGAGATGCTATCAGGTTGTTCTCTAGGGAGCAGTATTTTCCTCTGGTTTCTAATTATTTGGTTTATTATTTTTCTCCTGTGTTTGCTTTATTTCTTTCTTTGTTGATTTGGTTATTGGTTCCTTATTTAAGAGGTTTCATTTCTTTTGAGTTGGGTTTATTGTTTTTTCTGGCCTGTACTAGACTTGGTGTTTATACTGTTATGATTGCTGGTTGGTCATCTAATTCTGGTTATTCTTTGTTAGGTGGGCTTCGTGCTTTGGCTCAGACTATCTCTTATGAAGTTAGATTGGCTTTTATTTTGTTTTCTTTTGTTGTTTTAGTTTGTAGTTATAATTTAGTATA
 ```
+
+## Examples
+### Vertebrata dataset
+Open the three multifasta files, align them and use phyutility to concatenate them 
+`java -jar phyutility.jar -concat -in .\COX1_aligned.fasta .\CYTB_aligned.fasta .\ND4_aligned.fasta -out concatenated_output.nex`
+Now you can try with different markers for different (non completely overlapping) datasets as nexus format. You'll have to export the alignments (it means checking the alignments, the reading frames and the number of species which actually contain sequences) as fasta files and finally concatenate them
+`java -jar phyutility.jar -concat -in .\psaA.fas .\psaB.fas .\rpoB.fas .\rpoC1.fas .\ycf2.fas -out concatenated_output.nex`
