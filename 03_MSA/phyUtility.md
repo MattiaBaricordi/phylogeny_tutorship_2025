@@ -1,27 +1,51 @@
-# How to Use Phyutility on Windows
+# Multiple Sequences Alignment
+#### Java if you still have problems
 
-### Step 1: Install Java
+**Check Java Installation:**
 
-- Check if Java is installed by opening Command Prompt and typing:
+- Open the Command Prompt (`Win + R`, type `cmd`, press Enter).
+- Type the following command:
 
 ```bash
 java -version
 ```
 
-- If Java isn't installed, download and install from [Oracle's official site](https://www.oracle.com/java/technologies/javase-downloads.html).
+- If Java is installed, you'll see your Java version details. Ensure it is Java 1.5 or higher.
+- If Java isn't installed or your version is outdated, download the latest Java Runtime Environment (JRE) from [Oracle's official site](https://www.oracle.com/java/technologies/javase-downloads.html).
 
-- If necessary, add Java to your PATH environment variable (typically `C:\Program Files\Java\jre<version>\bin`).
+**Adding Java to PATH:**
 
-### Step 2: Download Phyutility
+- If Java is installed but not recognized in your command prompt, manually add it to your system PATH.
+- Navigate to System Properties → Advanced → Environment Variables → System Variables.
+- Add a new variable or edit the existing `Path` variable with the location typically found at:
 
-- Visit the [Phyutility Google Code Archive](https://code.google.com/archive/p/phyutility/).
-- Download the ZIP file containing `phyutility.jar`.
+```
+C:\Program Files\Java\jre<version>\bin
+```
 
-### Step 3: Extract Phyutility
+Restart the command prompt to reflect these changes.
 
-- Extract the downloaded ZIP to a convenient folder, for example `C:\Phyutility`.
+---
 
-### Step 4: Run Phyutility
+## Phyutility
+
+- Download the latest version from [Phyutility's download page](https://code.google.com/archive/p/phyutility/downloads).
+- You'll download a ZIP file containing `phyutility.jar` and possibly additional documentation or examples.
+
+---
+
+- Your directory structure should now look like:
+
+```
+C:\Phyutility
+|-- phyutility.jar
+|-- examples (optional folder)
+|-- documentation (optional folder)
+```
+
+---
+
+## Concatenate two alignments
 
 - Open Command Prompt (`Win + R`, type `cmd`, press Enter).
 - Navigate to the Phyutility directory:
@@ -29,44 +53,146 @@ java -version
 ```bash
 cd C:\Phyutility
 ```
-- Run Phyutility to verify installation:
+
+- Verify the installation by running:
 
 ```bash
 java -jar phyutility.jar
 ```
 
-You should see usage information displayed.
+- You should see general usage information and a list of commands available.
 
+---
 
-#### Display help
+## Concatenate FASTA Files Using Phyutility
 
-```bash
-java -jar phyutility.jar
+### Step 1: Prepare Your FASTA Files
+
+- Ensure your FASTA files are **ALIGNED**. Here, we use two example files: `termites_16S_aligned.fa` and `termites_ND1_aligned.fa`.
+- Move these FASTA files into your Phyutility directory (`C:\Phyutility`).
+
+Your updated directory structure:
+
 ```
+C:\Phyutility
+|-- phyutility.jar
+|-- termites_16S_aligned.fa
+|-- termites_ND1_aligned.fa
+```
+
+### Step 2: Concatenate Files
+
+- Run the concatenation command in the Command Prompt:
+```
+java -jar phyutility.jar -h concat
+concatenate alignments together
+options:
+        -concat | designates that you want to concatenate
+        -in <file name> ... | input file names
+        -out <file name> | output file name
+        -aa | force amino acid files
+java -jar phyutility.jar -concat -in test.aln test2.aln -out testall.aln
+```
+
 ```powershell
-Phyutility (fyoo-til-i-te) v.2.2.6
-Stephen A. Smith http://www.blackrim.org eebsmith@umich.edu
-help on a specific command use option -h <command>
-commands:
-trees:
-        consensus
-        convert
-        leafstab
-        linmove
-        prune
-        reroot
-        thin
-        treesupp
-seqs:
-        clean
-        concat
-        ncbiget
-        ncbisearch
-        parse
-see documentation for more information
+java -jar phyutility.jar -concat -in termites_16S_aligned.fa termites_ND1_aligned.fa -out termites_combined.nex -log logfile.txt
 ```
-### Concatenate using **Phyutility** on Windows.
 
+**Explanation:**
+- `-concat`: Specifies concatenation.
+- `-in`: Input files.
+- `-out`: Output file name.
+
+After execution, you'll find `termites_combined.nex` in your directory.
+
+```
+C:\Phyutility
+|-- phyutility.jar
+|-- termites_16S_aligned.fa
+|-- termites_ND1_aligned.fa
+|-- termites_combined.nex
+|-- logfile.txt
+```
+
+---
+
+## Step 5: Verify Concatenation
+
+- To inspect the resulting file, open it with a text editor (e.g., Notepad):
+
+```powershell
+notepad termites_combined.nex
+```
+
+### Expected Output Structure:
+
+You'll see a NEXUS-formatted file combining your sequences horizontally. Taxa missing in one alignment will have gaps (`-`). Example:
+
+```
+#NEXUS
+BEGIN DATA;
+	[termites_16S_aligned.fa_gene1 1-729 termites_ND1_aligned.fa_gene2 730-1217]
+	DIMENSIONS NTAX=9 NCHAR=1217;
+	FORMAT DATATYPE = DNA GAP = - MISSING = ?;
+	MATRIX
+
+Coptotermes_formosanus    CCTGCC...TTAGTATA
+Reticulitermes_lucifugus  CCTGCC...TTGGTTTA
+...
+;
+END;
+```
+
+Check carefully that sequences are correctly aligned and concatenated.
+
+---
+
+## Output File Partitioning Options
+
+## Output File Partitioning Options
+
+Phyutility can produce concatenated outputs in different formats useful for phylogenetic analyses:
+
+- **NEXUS** (`.nex`): Commonly used by phylogenetic software such as PAUP*, MrBayes, and BEAST.
+- **FASTA** (`.fasta` or `.fa`): Suitable for various bioinformatics tools and online platforms.
+
+Choose the format suitable for your subsequent analyses using the `-out` option, e.g.:
+
+```powershell
+java -jar phyutility.jar -concat -in input1.fa input2.fa -out output.nex -log logfile.txt
+```
+
+---
+
+## Troubleshooting and Additional Commands
+
+- **Getting Help:**
+
+```powershell
+java -jar phyutility.jar -h concat
+```
+
+- **Detailed logs:**
+
+```powershell
+java -jar phyutility.jar -concat -in input1.fa input2.fa -out output.nex -log logfile.txt
+```
+
+This will produce a detailed log file (`logfile.txt`) helpful in troubleshooting issues.
+
+---
+
+## References and Documentation
+
+- [Phyutility Official Documentation](https://code.google.com/archive/p/phyutility/wikis/UserManual.wiki)
+- Smith, S. A. (2007). *Phyutility manual (v. 2.2)*.
+
+For further questions, issues, or bugs, report them via the [official issue tracker](http://code.google.com/p/phyutility/issues/list).
+
+---
+
+
+## Termites_Examples
 ```termites_16S_aligned.fa
 >Coptotermes_formosanus
 CCTGCCCGCTGACTTGA-GTGTTGAAGGGCCGCGGTATTTTGACCGTGCAAAGGTAGCATAATCATTAGTTCTTTAATTGTGATCTGGAATGAATGGCTTGACGAGGCACAAGCTGTCTTAATGTTGAATGTTTTATTGAATTTGGTTTTTGAGTTAAAATTCTTAGATGTTTTTGTGGGACGAGAAGACCCTATAGAGTTTAACATTTGGTTTATTTGTTTGTTTGTTGTTTGTTTGTTTTATTGGTGAGT------GGACTTTT-----TGTTTTGTTGGGGTGATGGGAGGAATA-TAATTAACTCCTCTTGATTTTGGTTATATTGATTTATATTTATTTGATCCATTTATTTTGATTATAAGATTAAATTACCTTAGGGATAACAGCGTTATCTTCCTTGAGAGTTCTTATCGGCAGGGAGGTTTGCGACCTCGATGTTGGATTAAGGTGAATTTTTGGTGTAGGGGCTGAAAGTTATTATTGGGTCTGTTCGACCTTTAAAATCTTACATGATCTGAGTTCAAACCGGCGTGAGCCAGGTTGGTTTCTATCTATAAATGTAATTTTATACCTTAGTACGAGAGGACCAGGTATTTGGAATAATTTTGTTGTTGTTGAGTTTTATTAACTGGCTATTTTGGCAGATAAGTGCGCTGGATTTAGAATCTATTAATGTGAAGTTT--ATTTTACAAGTAGTATTTGTTATGTTGGG---ATTATTT
@@ -107,61 +233,3 @@ TTTGTTGTGGTCTTTTTGTTGTTGATTTTGTTTGTCATGGTTGGCGTGGCCTTTCTTACTCTTTTGGAACGTAGGGTTTT
 >Coptotermes_formosanus
 TCTATTGTTGTGTTTTTGTTGTTGGTTATTTTTGTTTTAGTTGGGGTGGCATTTCTTACTCTTTTAGAACGTAGGGTTTTAGGTTATATTCATATTCGTAAGGGCCCCAATAAGGTTGGGTTTGTTGGTATTCTTCAGCCTTTTAGAGATGCTATCAGGTTGTTCTCTAGGGAGCAGTATTTTCCTCTGGTTTCTAATTATTTGGTTTATTATTTTTCTCCTGTGTTTGCTTTATTTCTTTCTTTGTTGATTTGGTTATTGGTTCCTTATTTAAGAGGTTTCATTTCTTTTGAGTTGGGTTTATTGTTTTTTCTGGCCTGTACTAGACTTGGTGTTTATACTGTTATGATTGCTGGTTGGTCATCTAATTCTGGTTATTCTTTGTTAGGTGGGCTTCGTGCTTTGGCTCAGACTATCTCTTATGAAGTTAGATTGGCTTTTATTTTGTTTTCTTTTGTTGTTTTAGTTTGTAGTTATAATTTAGTATA
 ```
----
-Prepare Your FASTA Files
-
-- Move your **ALIGNED** FASTA files (`termites_16S_aligned.fa` and `termites_ND1_aligned.fa`) into the same directory as `phyutility.jar` (for simplicity).
-
-The directory structure should look like:
-
-```
-C:\Phyutility
-|-- phyutility.jar
-|-- termites_16S_aligned.fa
-|-- termites_ND1_aligned.fa
-```
-
----
-
-Concatenate FASTA Files
-
-- Execute the following command to concatenate your files:
-
-```powershell
-java -jar phyutility.jar -concat -in termites_16S_aligned.fa termites_ND1_aligned.fa -out termites_combined.nex
-```
-
-- Explanation:
-  - `-concat` tells Phyutility to concatenate the files.
-  - `-in` specifies the input FASTA files.
-  - `-out` specifies the output file name.
-
-After running the command, you should see the concatenated file `termites_combined.fasta` in your directory.
-
-```
-Termites_example
-
-
-    Name
-     ----
-	phyutility.jar
-    phyutility.log
-    termites_16S_aligned.fa
-    termites_combined.nex
-    termites_ND1_aligned.fa
-```
----
-
-Verify the Concatenation
-
-- You can verify the concatenation by opening the resulting FASTA file in a text editor (e.g., Notepad or Notepad++).
-
-```powershell
-notepad termites_combined.fasta
-```
-
-You should see a single FASTA file containing sequences from both input files. Each sequence from matching taxa will be concatenated horizontally, with gaps (`-`) added for any missing taxa between the files.
-
----
-
-
