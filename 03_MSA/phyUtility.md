@@ -223,9 +223,25 @@ TTTGTTGTGGTCTTTTTGTTGTTGATTTTGTTTGTCATGGTTGGCGTGGCCTTTCTTACTCTTTTGGAACGTAGGGTTTT
 TCTATTGTTGTGTTTTTGTTGTTGGTTATTTTTGTTTTAGTTGGGGTGGCATTTCTTACTCTTTTAGAACGTAGGGTTTTAGGTTATATTCATATTCGTAAGGGCCCCAATAAGGTTGGGTTTGTTGGTATTCTTCAGCCTTTTAGAGATGCTATCAGGTTGTTCTCTAGGGAGCAGTATTTTCCTCTGGTTTCTAATTATTTGGTTTATTATTTTTCTCCTGTGTTTGCTTTATTTCTTTCTTTGTTGATTTGGTTATTGGTTCCTTATTTAAGAGGTTTCATTTCTTTTGAGTTGGGTTTATTGTTTTTTCTGGCCTGTACTAGACTTGGTGTTTATACTGTTATGATTGCTGGTTGGTCATCTAATTCTGGTTATTCTTTGTTAGGTGGGCTTCGTGCTTTGGCTCAGACTATCTCTTATGAAGTTAGATTGGCTTTTATTTTGTTTTCTTTTGTTGTTTTAGTTTGTAGTTATAATTTAGTATA
 ```
 
-## Examples
+## Concatenation Examples
 ### Vertebrata dataset
 Open the three multifasta files, align them and use phyutility to concatenate them 
 `java -jar phyutility.jar -concat -in .\COX1_aligned.fasta .\CYTB_aligned.fasta .\ND4_aligned.fasta -out concatenated_output.nex`
 Now you can try with different markers for different (non completely overlapping) datasets as nexus format. You'll have to export the alignments (it means checking the alignments, the reading frames and the number of species which actually contain sequences) as fasta files and finally concatenate them
 `java -jar phyutility.jar -concat -in .\psaA.fas .\psaB.fas .\rpoB.fas .\rpoC1.fas .\ycf2.fas -out concatenated_output.nex`
+
+# Codon partitioning in AliView
+`File > Save as codonopos Nexus`
+![alt text](image.png)
+AliView will cluster all First, Second and Third codon positions in an alignment like it's a normal sequence (**remember it is not**) using a colour code for each position and creating a `.nex` file      
+
+Opening the nexus file will reveal a snippet of code at the end, basically a charset/partition like this:
+```
+BEGIN SETS;
+charset 1st = 1-243; # All First codon nucleotides are found from position 1 to position 243 
+charset 2nd = 244-486; # All Second codon nucleotides positions
+charset 3nd = 487-729; # All Third codon nucleotides positions
+END;
+```
+**Remember that you are looking at "fake" sequences (i.e. not within the variability of the gene you have extracted them from)**
+So if you reopen the same file forgetting it is indeed a codon position partition you can easily mistake it for the sequence you created it from (in AliView)
