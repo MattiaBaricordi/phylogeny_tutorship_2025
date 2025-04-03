@@ -234,7 +234,6 @@ Now you can try with different markers for different (non completely overlapping
 
 # Codon partitioning in AliView
 `File > Save as codonopos Nexus`
-![alt text](image.png)
 AliView will cluster all First, Second and Third codon positions in an alignment using colour-coded positions and creating a `.nex` file      
 
 Opening the nexus file will reveal a snippet of code at the end, basically a charset/partition like this:
