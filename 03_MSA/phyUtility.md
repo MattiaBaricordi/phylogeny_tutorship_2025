@@ -182,7 +182,8 @@ This will produce a detailed log file (`logfile.txt`) helpful in troubleshooting
 
 
 ## Termites_Examples
-```termites_16S_aligned.fa
+termites_16S_aligned.fa
+```
 >Coptotermes_formosanus
 CCTGCCCGCTGACTTGA-GTGTTGAAGGGCCGCGGTATTTTGACCGTGCAAAGGTAGCATAATCATTAGTTCTTTAATTGTGATCTGGAATGAATGGCTTGACGAGGCACAAGCTGTCTTAATGTTGAATGTTTTATTGAATTTGGTTTTTGAGTTAAAATTCTTAGATGTTTTTGTGGGACGAGAAGACCCTATAGAGTTTAACATTTGGTTTATTTGTTTGTTTGTTGTTTGTTTGTTTTATTGGTGAGT------GGACTTTT-----TGTTTTGTTGGGGTGATGGGAGGAATA-TAATTAACTCCTCTTGATTTTGGTTATATTGATTTATATTTATTTGATCCATTTATTTTGATTATAAGATTAAATTACCTTAGGGATAACAGCGTTATCTTCCTTGAGAGTTCTTATCGGCAGGGAGGTTTGCGACCTCGATGTTGGATTAAGGTGAATTTTTGGTGTAGGGGCTGAAAGTTATTATTGGGTCTGTTCGACCTTTAAAATCTTACATGATCTGAGTTCAAACCGGCGTGAGCCAGGTTGGTTTCTATCTATAAATGTAATTTTATACCTTAGTACGAGAGGACCAGGTATTTGGAATAATTTTGTTGTTGTTGAGTTTTATTAACTGGCTATTTTGGCAGATAAGTGCGCTGGATTTAGAATCTATTAATGTGAAGTTT--ATTTTACAAGTAGTATTTGTTATGTTGGG---ATTATTT
 >Reticulitermes_lucifugus
@@ -202,7 +203,8 @@ CCTGCCCGCTGACTTTG-GTGTTGAAGGGCCGCGGTATTTTGACCGTGCAAAGGTAGCATAGTCATTAGTTCTTTAATTG
 >Reticulitermes_flavipes
 CCTGCCCACTGACCTTGAATGTTGAAGGGCCGCGGTATTTTGACCGTGCAAAGGTAGCATAGTCATTAGTTCTTTAATTGTGATCTGGTATGAATGGCTTGACGAGGCATAGGCTGTCTTAATTTTGAATTGTTTATTGAATTTGGTCTTTGAGTTAAAATTCTTAGATGTTTTTATGGGACGAGAAGACCCTATAGAGTTTGACATTTA--TTCACGGTCT-CTTTCTGTTTGT-----------GAGGGTTCACTAGGGCTGTTTAATATGTTTTGTTGGGGTGATGGGAGGGATATTATTTAACCCCTCCTTTGTGTTGTTATATTTATTTATATTTGCTTGATCCATTTATTTTGATTGTAAGATTAAATTACCTTAGGGATAACAGCGTTATCTCCCTTGAGAGTTCTTATCGGCAGGGGGGTTTGCGACCTCGATGTTGGATTAAGGTTTATTTTCGGTGTAGGGGCTGGAAAGTTATATTGGGTCTGTTCGACCTTTAAAATCTTACATGATCTGAGTTCAAACCGGCGTGAGCCAGGTTGGTTTCTATCTAT-AATGGA-TTTTATACCTTAGTACGAGAGGACCAGGTATTTGGAATAATTTTATGTTTGTTGAATATTATTAACTGGCTATTTTGGCAGATAAGTGCGTTAGATTTAGAATCTGTTAATGTAAATTTTTAATGTTACAAGTAGTAT---ATATGTTGGGTTATTTATTT
 ```
-```termites_ND1_aligned.fa
+termites_ND1_aligned.fa
+```
 >Reticulitermes_urbis
 TTTATTGTGGTCTTTTTGTTGTTGATTTTGTTTGTCATGGTTGGTGTAGCCTTTCTTACTCTTTTGGAACGGAGGGTTTTGGGATATGTTCATATTCGCAGGGGCCCGAATAGGGTAGGATTTGTTGGTGTTCTTCAGCCTTTTAGAGATGCCATTAGGTTGTTTTCTAAGGAGCAGTATTTTCCTTTGGTTTCTAATTATCTGGTTTATTATTTTTCTCCTGTTTTTGGTTTATTCCTTTCATTGTTGGTTTGACTGTTGATCCCTTATTTAAGAGGTTTTGTTTCCTTTGAGTTAGGCTTATTATTTTTTTTGGCATGTACTAGATTGGGTGTTTATACTGTAATAGTTGCTGGTTGGTCTTCTAATTCTAGATATTCTTTATTGGGTGGTTTGCGTGCTTTGGCTCAGACTGTTTCTTATGAGGTAAGATTAGCCTTTATCTTGTTTTCTTTTGTTATTTTGATTTGTAGTTATAATCTAGTTTA
 >Reticulitermes_balkanensis
@@ -233,7 +235,7 @@ Now you can try with different markers for different (non completely overlapping
 # Codon partitioning in AliView
 `File > Save as codonopos Nexus`
 ![alt text](image.png)
-AliView will cluster all First, Second and Third codon positions in an alignment like it's a normal sequence (**remember it is not**) using a colour code for each position and creating a `.nex` file      
+AliView will cluster all First, Second and Third codon positions in an alignment using colour-coded positions and creating a `.nex` file      
 
 Opening the nexus file will reveal a snippet of code at the end, basically a charset/partition like this:
 ```
@@ -243,5 +245,43 @@ charset 2nd = 244-486; # All Second codon nucleotides positions
 charset 3nd = 487-729; # All Third codon nucleotides positions
 END;
 ```
-**Remember that you are looking at "fake" sequences (i.e. not within the variability of the gene you have extracted them from)**
-So if you reopen the same file forgetting it is indeed a codon position partition you can easily mistake it for the sequence you created it from (in AliView)
+**⚠️ Important: These are "fake" sequences — not real biological sequences!**  
+If you reopen the same file forgetting it’s a codon position partition, you can easily mistake it for the original nucleotide alignment.
+
+### Codon positions and why they matter
+
+When working with protein-coding DNA, sequences are read in **codons** — groups of three nucleotides — and each codon codes for an amino acid. The **three positions** within each codon evolve under different constraints:
+
+- **1st codon position**: often result in **non-synonymous** changes altering amino acids and potentially affecting protein function. These positions are under moderate selective constraint.
+- **2nd codon position**: The most conserved — nearly all changes affect the amino acid.
+- **3rd codon position**: Changes **tend** to be **synonymous**: due to the redundancy in the genetic code not altering the amino acid sequence. This results in lower selective constraint and a higher mutation rate, making them more prone to saturation over time.​
+
+Incorporating codon position information into phylogenetic analyses allows for models that more accurately reflect  molecular evolution
+
+ 1. **Distinct Evolutionary Pressures**: Each position within a codon experiences unique evolutionary constraints:​
+
+ 2. **Model Fit**
+	Assigning distinct substitution models or evolutionary rates to each codon position allows for a better fit between the model and the data:​
+	- Tailored Modeling: Applying appropriate models to different codon positions enhances the accuracy of phylogenetic estimates.​
+	- Improved Likelihood Scores: Better model fit results in higher likelihood scores, indicating a more accurate representation of the evolutionary process.​
+	- Robust Branch Support: Accurate modeling leads to more reliable branch support values, strengthening the confidence in the inferred phylogenetic relationships.​
+
+ 3. **Saturation and Noise**
+	The rapid evolution of 3rd codon positions can lead to multiple substitutions at the same site, causing saturation. This can obscure true evolutionary signals, especially over long timescales. Partitioning allows for:​
+	- Down-weighting Saturated Positions: Reducing the influence of highly variable sites that may contribute more noise than signal.​
+	- Focused Analysis on Conserved Positions: Emphasizing 1st and 2nd positions, which retain more phylogenetic signal over extended periods.​
+	- Comparative Analyses: Evaluating phylogenies with and without certain codon positions to assess their impact on the inferred relationships.​
+	
+ 4. **Codon-Aware Substitution Models**
+	- Modeling Codon Triplets Directly: Considering the entire codon as the unit of evolution, capturing interactions between codon positions.​
+	- Distinguishing Synonymous and Non-Synonymous Substitutions: Allowing for separate rates, providing insights into selective pressures.​
+---
+
+### Ribosomal RNA (rRNA) genes
+
+**Codon partitioning is irrelevant for mitochondrial ribosomal genes**, such as 16S, because:
+
+- These are **not protein-coding genes** — they are **RNA genes** (structural RNA).
+- They are **not translated**, so there's **no codon structure** (no first, second, or third position).
+- Partitioning them as if they were codon-based introduces **false assumptions** into your models.
+   
