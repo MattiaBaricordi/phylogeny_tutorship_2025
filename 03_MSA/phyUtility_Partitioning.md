@@ -149,12 +149,10 @@ Check carefully that sequences are correctly aligned and concatenated.
 
 ## Output File Partitioning Options
 
-## Output File Partitioning Options
-
 Phyutility can produce concatenated outputs in different formats useful for phylogenetic analyses:
 
-- **NEXUS** (`.nex`): Commonly used by phylogenetic software such as PAUP*, MrBayes, and BEAST.
-- **FASTA** (`.fasta` or `.fa`): Suitable for various bioinformatics tools and online platforms.
+- **NEXUS** (`.nex`)
+- **FASTA** (`.fasta` or `.fa`)
 
 Choose the format suitable for your subsequent analyses using the `-out` option, e.g.:
 
@@ -226,14 +224,20 @@ TCTATTGTTGTGTTTTTGTTGTTGGTTATTTTTGTTTTAGTTGGGGTGGCATTTCTTACTCTTTTAGAACGTAGGGTTTT
 ```
 
 ## Concatenation Examples
-### Vertebrata dataset
+-  *Vertebrata*   
 Open the three multifasta files, align them and use phyutility to concatenate them 
-`java -jar phyutility.jar -concat -in .\COX1_aligned.fasta .\CYTB_aligned.fasta .\ND4_aligned.fasta -out concatenated_output.nex`
-Now you can try with different markers for different (non completely overlapping) datasets as nexus format. You'll have to export the alignments (it means checking the alignments, the reading frames and the number of species which actually contain sequences) as fasta files and finally concatenate them
+`java -jar phyutility.jar -concat -in .\COX1_aligned.fasta .\CYTB_aligned.fasta .\ND4_aligned.fasta -out concatenated_output.nex`    
+- *Orchids*  
+Now you can try with different markers for different (non completely overlapping) datasets as nexus format. You'll have to export the alignments (it means checking the alignments, the reading frames and the number of species which actually contain sequences) as fasta files and finally concatenate them   
 `java -jar phyutility.jar -concat -in .\psaA.fas .\psaB.fas .\rpoB.fas .\rpoC1.fas .\ycf2.fas -out concatenated_output.nex`
 
+
+
+----
+---
+
 # Codon partitioning in AliView
-`File > Save as codonopos Nexus`
+`File > Save as codonopos Nexus`   
 AliView will cluster all First, Second and Third codon positions in an alignment using colour-coded positions and creating a `.nex` file      
 
 Opening the nexus file will reveal a snippet of code at the end, basically a charset/partition like this:
