@@ -4,10 +4,6 @@ term_script_cds_rRNA.py
 
 Fetch each mito genome with full parts, extract only CDS + 12S/16S rRNAs,
 split per species and aggregate per gene across all species.
-
-If the RefSeq entry lacks rRNA features, we detect the “identical to”
-GenBank accession from the COMMENT and fetch that to harvest 12S & 16S.
-We also clear out any old s_rRNA/l_rRNA FASTAs before aggregating.
 """
 
 import os
@@ -17,12 +13,9 @@ from collections import defaultdict
 from Bio import Entrez, SeqIO
 from Bio.SeqRecord import SeqRecord
 
-# — USER SETTINGS —
-Entrez.email = "your.email@example.com"
-# Entrez.api_key = "YOUR_NCBI_API_KEY"  # optional
 
-DIR_SPLIT = "genes_by_species"
-DIR_AGG   = "genes_by_all_species"
+DIR_SPLIT = "genes"
+DIR_AGG   = "species"
 
 # ensure clean aggregate directory
 if os.path.isdir(DIR_AGG):
@@ -77,8 +70,7 @@ def sanitize(x):
 
 def canonical_rRNA(raw: str) -> str:
     """
-    Collapse any small‐subunit synonyms → 12S_rRNA
-                any large‐subunit synonyms → 16S_rRNA
+    Collapse synonyms for 12S_rRNA and 16S_rRNA
     """
     r = (raw or "").lower()
     if ("12s" in r
@@ -95,7 +87,7 @@ def canonical_rRNA(raw: str) -> str:
     return sanitize(raw or "rRNA")
 
 def fetch_record(acc: str):
-    """Get GenBank with parts so we see 'gene' features."""
+    """Get GenBank features."""
     with Entrez.efetch(db="nucleotide", id=acc,
                        rettype="gbwithparts", retmode="text") as h:
         return SeqIO.read(h, "genbank")
@@ -126,7 +118,7 @@ def ensure_rRNAs(gmap: dict, rec):
 
 def split_cds_rRNA(rec, outdir):
     """
-    Extract 13 CDS + both rRNAs:
+    Extract 13 CDS + rRNAs:
       1) protein genes via 'gene' features (skip trn*/rrn*)
       2) any stray CDS
       3) any rRNA
@@ -137,7 +129,7 @@ def split_cds_rRNA(rec, outdir):
     feats = rec.features
     gmap  = {}
 
-    # 1) all protein-coding genes
+    # cds
     for f in feats:
         if f.type=="gene" and "gene" in f.qualifiers:
             raw = f.qualifiers["gene"][0]
@@ -145,7 +137,7 @@ def split_cds_rRNA(rec, outdir):
                 continue
             gmap[sanitize(raw)] = f
 
-    # 2) fallback: any CDS lacking a gene parent
+    # fallback
     for f in feats:
         if f.type=="CDS":
             raw = f.qualifiers.get("gene",[""])[0] or f.qualifiers.get("product",[""])[0]
@@ -153,16 +145,16 @@ def split_cds_rRNA(rec, outdir):
             if nm not in gmap:
                 gmap[nm] = f
 
-    # 3) harvest rRNAs if present
+    # rRNAs 
     for f in feats:
         if f.type=="rRNA":
             raw = f.qualifiers.get("product",[""])[0] or f.qualifiers.get("gene",[""])[0]
             gmap[canonical_rRNA(raw)] = f
 
-    # 4) if still missing 12S/16S, pull from COMMENT‐linked record
+    
     ensure_rRNAs(gmap, rec)
 
-    # 5) write out in genome order
+    # write out in genome order
     out = {}
     for nm, f in sorted(gmap.items(), key=lambda kv: int(kv[1].location.start)):
         seq   = f.extract(rec.seq)
