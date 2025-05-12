@@ -17,6 +17,7 @@ Examples of FigTree:
 ![image](https://github.com/user-attachments/assets/dd385082-a50d-4169-af53-c005468e04f9)
 
 (Online alternatives:[Phylo.io](https://beta.phylo.io/viewer/))
+(A more encompassing alternative:[TreeViewer](https://treeviewer.org/))
 
 
 # [Phyutility v. 2](https://code.google.com/archive/p/phyutility/downloads)
