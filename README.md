@@ -25,7 +25,7 @@ To concatenate sequences and build Alignments
 
 # [MrBayes v. 3.2 ](https://nbisweden.github.io/MrBayes/download.html)
 
-# [BEAST](https://beast.community/install_on_windows)
+# [BEAST](https://beast.community/install_on_windows) + [Tracer](https://beast.community/tracer)
 Bayesian Inference and TimeTrees
 
 # R Scripts 
